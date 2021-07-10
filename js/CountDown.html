@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CountDown</title>
+</head>
+<body>
+<h1>Count Down from n</h1>
+<div class="form">
+    <label for="number">Countdown from: </label>
+    <input type="number" id="number" class="getNumber">
+    <input type="submit" value="Count!" class="startCount">
+</div>
+<div class="output"></div>
+</body>
+<script>
+    const getNumber = document.querySelector('.form .getNumber');
+    const startCount = document.querySelector('.form .startCount')
+    let output = document.querySelector('.output');
+
+
+    function countDown() {
+        output.innerHTML = '';
+        let num = Number(getNumber.value);
+        let text = '';
+        for (let i = num; i >= 0; i--) {
+            if (i === 0) {
+                text = 'Blast off!';
+            } else {
+                text = 'Countdown ' + i;
+            }
+            var para = document.createElement('p');
+            para.textContent = text;
+            output.appendChild(para);
+        }
+    }
+
+    function hello() {
+        alert('hello')
+    }
+
+    startCount.addEventListener('click', countDown)
+</script>
+</html>
