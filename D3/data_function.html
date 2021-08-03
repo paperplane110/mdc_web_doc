@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<script>
+    let data = [1, 2, 3];
+    let paragraph = d3.select("body")
+        .selectAll("p")
+        .data(data)
+        .text(function (d, i) {
+            console.log("d: " + d);
+            console.log("i: " + i);
+            console.log("this: " + this);
+            return "The index is " + i + " and the data is " + d;
+        })
+</script>
+</body>
+</html>
